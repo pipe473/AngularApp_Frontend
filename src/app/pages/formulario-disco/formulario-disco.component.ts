@@ -8,7 +8,7 @@ import { Disco } from '../../model/disco';
   styleUrls: ['./formulario-disco.component.scss']
 })
 export class FormularioDiscoComponent implements OnInit {
-  list : any[] = [];
+  public list : any[] = [];
 
   constructor(public discoService: DiscoService ) { }
 
@@ -26,26 +26,7 @@ export class FormularioDiscoComponent implements OnInit {
     public obtenerDisco(id: string) {
       this.discoService.obtenerDisco(Number(id)).subscribe((data) => 
       {
-        this.obtenerDisco = data[0];
-        console.log(data);        
-      });
-    }
-
-    //  public obtenerDiscos() 
-    // {
-    //   this.discoService.obtenerDiscos().then((data) => {
-    //     this.list = data[0];
-    //     console.log(data);        
-    //   }).catch((err) => {
-    //     console.log(err);        
-    //   })
-    // }
-
-    // Metodo del controlador que llama al metodo del servicio para encontrar una ciudad por su codigo
-    public obtenerDiscos() 
-    {
-      this.discoService.obtenerDiscos().subscribe((data) => {
-        this.obtenerDiscos = data[0];
+        this.list = data[0];
         console.log(data);        
       });
     }
@@ -68,6 +49,26 @@ export class FormularioDiscoComponent implements OnInit {
         console.log("Disco actualizado correctamente!");    
       });
     }
+
+
+    //  public obtenerDiscos() 
+    // {
+    //   this.discoService.obtenerDiscos().then((data) => {
+    //     this.list = data[0];
+    //     console.log(data);        
+    //   }).catch((err) => {
+    //     console.log(err);        
+    //   })
+    // }
+
+    // Metodo del controlador que llama al metodo del servicio para encontrar una ciudad por su codigo
+    // public obtenerDiscos() 
+    // {
+    //   this.discoService.obtenerDiscos().subscribe((data) => {
+    //     this.list = data[0];
+    //     console.log(data);        
+    //   });
+    // }
 
   ngOnInit(): void {
   }

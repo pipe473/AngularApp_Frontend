@@ -15,33 +15,31 @@
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="inputCiudad">Titulo:</label>
-            <input type="text" placeholder="Introduce un titulo" #titulo />
+            <input type="text" placeholder="titulo" #titulo />
           </div>
           <div class="form-group col-md-4">
             <label for="inputPais">Interprete:</label>
-            <input type="text" placeholder="Introduce un interprete" #interprete />
+            <input type="text" placeholder="interprete" #interprete />
           </div>
           <div class="form-group col-md-4">
             <label for="inputCodigo">Año publicación:</label>
-            <input type="text" placeholder="Introduce año publicación" #anyoPublicacion />
+            <input type="text" placeholder="año publicación" #anyoPublicacion />
+          </div>
+         
+          <div class="form-group col-md-4">
+            <label for="inputCodigo">Id:</label>
+            <input type="text" placeholder="eliminar" #_id />
           </div>
           <div class="form-group col-md-4">
             <label for="inputCodigo">Id:</label>
-            <input type="text" placeholder="Buscado por id" #id />
+            <input type="text" placeholder="editar" #ide />
           </div>
-          <div class="form-group col-md-4">
-            <label for="inputCodigo">Id:</label>
-            <input type="text" placeholder="borrado por id" #_id />
+          <div>
+            <button type="button" (click)="crear(titulo.value, interprete.value, anyoPublicacion.value)" class="btn btn-success mb-2">Añadir Disco</button>
+            
+            <button type="button" (click)="eliminarDisco(_id.value)" class="btn btn-success mb-2">Eliminar Disco</button>
+            <button type="button" (click)="actualizarDisco(titulo.value, interprete.value, anyoPublicacion.value, ide.value)" class="btn btn-success mb-2">Editar Disco</button>
           </div>
-          <div class="form-group col-md-4">
-            <label for="inputCodigo">Id:</label>
-            <input type="text" placeholder="editar por id" #ide />
-          </div>
-          <button type="button" (click)="crear(titulo.value, interprete.value, anyoPublicacion.value)" class="btn btn-success mb-2">Añadir Disco</button>
-          <button type="button" (click)="obtenerDisco(id.value)" class="btn btn-success mb-2">Buscar Disco</button>
-          <button type="button" (click)="obtenerDiscos()" class="btn btn-success mb-2">Mostrar todos los Discos</button>
-          <button type="button" (click)="eliminarDisco(_id.value)" class="btn btn-success mb-2">Eliminar Disco</button>
-          <button type="button" (click)="actualizarDisco(titulo.value, interprete.value, anyoPublicacion.value, ide.value)" class="btn btn-success mb-2">Editar Disco</button>
         </div>
     </form>
 </body>
